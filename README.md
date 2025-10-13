@@ -6,11 +6,8 @@ AI 상품설명 도우미
 python -m venv venv
 
 활성화
-macOS / Linux:
-source venv/bin/activate
+macOS / Linux: source venv/bin/activate
 
-Windows (cmd):
-venv\Scripts\activate
+Windows (cmd): venv\Scripts\activate
 
-Windows (PowerShell):
-venv\Scripts\Activate.ps1
+Windows (PowerShell): venv\Scripts\Activate.ps1
