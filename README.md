@@ -1,18 +1,6 @@
 # shb_semo
 AI 상품설명 도우미
 
-### 가상환경 만들기 (venv)
-가상환경 생성:
-python -m venv venv
-
-활성화
-macOS / Linux: source venv/bin/activate
-
-Windows (cmd): venv\Scripts\activate
-
-Windows (PowerShell): venv\Scripts\Activate.ps1
-
-
 ---
 
 ## ✨ 프로젝트 개요: 금융 업무를 위한 AI 상품설명 도우미 구축
@@ -34,21 +22,16 @@ Windows (PowerShell): venv\Scripts\Activate.ps1
 | **목표** | 고객 응대 및 영업지원 관점에서 상품설명서를 빠르게 이해하고 스스로 판단할 수 있도록 지원하는 도우미 서비스 구축 |
 | **이유** | 금융소비자보호법 시행 후 상품 숙지가 중요해졌으며, 고객이 원하는 상품 정보와 설명을 적시에 제공하기 위해 **AI 기반의 효율적인 정보 탐색 및 질의응답** 기능이 필수적임. |
 
----
 
 ## 2. 세부 내용 (단계별 계획 및 기대효과)
 
 ### 🚀 주요 기능 개발 계획
 
-| 단계 | 기능/활동 | 설명 |
-| :---: | :---: | :--- |
-| **1단계** | **상품설명 3줄 요약** | 타겟 상품 설명서의 핵심 내용을 3줄로 요약 제공 |
-| **2단계** | **질의응답 (요약/심화)** | 고객 질문 또는 문의에 대한 핵심 답변을 2~3줄 이내로 제공 |
-| **3단계** | **상품 이해 1분 퀴즈** | 상품 설명서 기반의 **맞춤형 퀴즈**를 제공하여 직원들의 상품 이해도를 점검 |
-| **4단계** | **데이터 수집 및 분류** | 상품설명서, 규정 등 데이터 구축 및 사전 학습 |
-| **5단계** | **RAG 모델 개발/테스트** | 비정형 문서를 LLM이 참조하도록 RAG 모델 개발 및 테스트 환경 구축 |
-| **6단계** | **기능별 API 개발** | - |
-| **7단계** | **시나리오 작성** | SOL, MoLi 플랫폼 적용을 위한 시나리오 작성 |
+| 기능/활동 | 설명 |
+| :---: | :--- |
+| **상품설명 3줄 요약** | 타겟 상품 설명서의 핵심 내용을 3줄로 요약 제공 |
+| **질의응답 (요약/심화)** | 고객 질문 또는 문의에 대한 핵심 답변을 2~3줄 이내로 제공 |
+| **상품 이해 1분 퀴즈** | 상품 설명서 기반의 **맞춤형 퀴즈**를 제공하여 직원들의 상품 이해도를 점검 |
 
 ### 🎯 기대 효과
 
@@ -58,3 +41,57 @@ Windows (PowerShell): venv\Scripts\Activate.ps1
 | **직원** | - **상품/규정 숙지 지원:** 직원이 따로 노력하지 않아도 상품 숙지를 지원할 수 있도록 보조 <br> - **업무 환경 개선:** 상품 관련 질의응답 및 상품설명서 요약/퀴즈 기능을 제공함으로써 **반복 업무 부담을 줄여** 업무에 집중할 수 있는 환경 제공 |
 
 ---
+
+## 🛠️ 개발 환경 설정 가이드
+
+프로젝트에 필요한 의존성을 격리하고 관리하기 위해 **가상 환경 (Virtual Environment, `venv`)**을 설정합니다.
+
+
+### 1. 가상 환경 생성
+
+프로젝트 루트 디렉토리에서 다음 명령어를 실행하여 `venv`라는 이름의 가상 환경을 생성합니다.
+
+```bash
+python -m venv venv
+```
+
+### 2. 가상 환경 활성화
+macOS / Linux:
+```bash
+source venv/bin/activate
+```
+Windows (cmd):
+```bash
+venv\Scripts\activate
+```
+Windows (PowerShell):
+```bash
+venv\Scripts\Activate.ps1
+```
+
+### 3. requirements.txt 설치
+```bash
+pip install -r requirements.txt
+```
+
+### 4. OpenAI API Key 설정 (환경변수)
+
+macOS / Linux (현재 터미널 세션에만 적용):
+```bash
+export OPENAI_API_KEY="sk-여기에-API-키-붙여넣기"
+```
+
+Windows (cmd, 세션에만 적용):
+```bash
+set OPENAI_API_KEY=sk-여기에-API-키-붙여넣기
+```
+
+Windows PowerShell (세션에만 적용):
+```bash
+$env:OPENAI_API_KEY="sk-여기에-API-키-붙여넣기"
+```
+
+### 5. 실행
+```bash
+streamlit run app.py
+```
